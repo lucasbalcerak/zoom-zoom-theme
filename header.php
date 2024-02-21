@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
@@ -11,5 +11,9 @@
 </head>
 <body>
     <header>
+        <img 
+        class="logo-top"
+        src="<?php echo get_theme_file_uri("images/logo.png") ?>">
+    <header>
 
-    </header>
+    
