@@ -14,6 +14,19 @@ function custom_post_types() {
         ),
         'menu_icon' => 'dashicons-admin-comments'
     ));
+
+    register_post_type("Oferta", array(
+        'show_in_rest' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => 'Oferta',
+            'add_new_item' => 'Oferta',
+            'edit_item' => 'Edytuj Oferte',
+            'all_items' => 'Oferty',
+            'singular_name' => 'Oferta'
+        ),
+        'menu_icon' => 'dashicons-money'
+    ));
 }
 
 add_action('init','custom_post_types');
