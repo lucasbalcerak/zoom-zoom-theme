@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+.container {
+  max-width: 1400px;
+}
+
 .page-banner {
   height: 600px;
 }
@@ -55,6 +59,29 @@ body {
   left: 50%;
   transform: translate(-50%, -30%);
   height: 300px;
+}
+
+.quote-section {
+  height: 600px;
+}
+
+.quote {
+  width: 650px;
+  height: 400px;
+  border-left: 2px solid #1C0B01;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+.quote p {
+  font-size: 1.5em;
+  margin-left: 10%;
+}
+.quote span {
+  font-family: "Caveat";
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 50px;
 }
 
 .border {
