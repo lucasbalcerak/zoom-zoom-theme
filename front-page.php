@@ -29,9 +29,13 @@ style="background-image: url(<?php echo get_theme_file_uri('images/hero.jpg') ?>
     </div>
 </section>
 <section 
-class="big_picture offer-background"
+class="big_picture offer-background flex-container"
 style="background-image: url(<?php echo get_theme_file_uri('images/offer-background.jpg') ?>)">
     <div class="offer flex-container">
+        <div class="offer-control-item">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="test">
         <?php
             $offerPost = new WP_Query( array(
                 'post_per_page' => 1,
@@ -41,14 +45,16 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
                 $offerPost->the_post();
                 ?>
                 <div class="offer-box">
-                    <?php
-                        ?>
-                        <h5>
-                            <?php echo get_the_title(); ?>
-                        </h5>
-                            <?php echo get_the_content(); 
-                        }?>
-                </div>    
+                    <h5>
+                        <?php echo get_the_title(); ?>
+                    </h5>
+                        <?php echo get_the_content(); 
+            }?>
+                </div>
+        </div>
+        <div class="offer-control-item">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>    
     </div>
 </section>
 <?php
