@@ -82,6 +82,23 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
     ?>       
     </div>
 </section>
+<section class="section-height flex-container">
+    <div class="container flex-container quote">
+        <?php
+            $qutePost = new WP_Query( array(
+                'posts_per_page' => 1,
+                'post_type' => 'cytat',
+                'p' => 28
+            ));
+            while($qutePost->have_posts()) {
+                $qutePost->the_post();
+                echo get_the_content(); ?> 
+            <?php
+            }
+        wp_reset_postdata();    
+        ?>
+    </div>
+</section>
 <?php
 get_footer();
 ?>
