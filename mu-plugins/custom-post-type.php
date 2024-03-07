@@ -27,6 +27,19 @@ function custom_post_types() {
         ),
         'menu_icon' => 'dashicons-money'
     ));
+
+    register_post_type("Zdjęcie", array(
+        'show_in_rest' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => 'Galeria',
+            'add_new_item' => 'Zdjęcie',
+            'edit_item' => 'Edytuj Zdjęcie',
+            'all_items' => 'Zdjęcia',
+            'singular_name' => 'Zdjęcie'
+        ),
+        'menu_icon' => 'dashicons-format-gallery'
+    ));
 }
 
 add_action('init','custom_post_types');

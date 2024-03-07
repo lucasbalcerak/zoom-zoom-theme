@@ -1,0 +1,34 @@
+.gallery-section {
+    margin-top: 400px;
+}
+
+.insta-info {
+    font-size: 2.5em;
+    justify-content: center;
+
+    p {
+        font-family: $handwritten-font;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+}
+
+.gallery {
+    overflow: hidden;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: solid 2px $darkBrown;
+}
+
+.gallery-item{
+    min-width: 300px;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    border: solid 2px $darkBrown;
+    margin-right: 30px;
+
+    :last-child {
+        margin-right: 0;
+    }
+}

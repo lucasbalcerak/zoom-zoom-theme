@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+.flex-item {
+  margin: 0;
+}
+
 .container {
   max-width: 1400px;
 }
@@ -141,6 +145,39 @@ body {
 
 .test {
   width: 60%;
+}
+
+.gallery-section {
+  margin-top: 400px;
+}
+
+.insta-info {
+  font-size: 2.5em;
+  justify-content: center;
+}
+.insta-info p {
+  font-family: "Caveat";
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.gallery {
+  overflow: hidden;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: solid 2px #1C0B01;
+}
+
+.gallery-item {
+  min-width: 300px;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  border: solid 2px #1C0B01;
+  margin-right: 30px;
+}
+.gallery-item :last-child {
+  margin-right: 0;
 }
 
 .border {

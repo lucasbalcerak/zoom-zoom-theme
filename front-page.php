@@ -57,6 +57,31 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
         </div>    
     </div>
 </section>
+<section class="section-height gallery-section container">
+    <div class="insta-info flex-container">
+        <i class="fa-brands fa-instagram flex-item"></i>
+        <p class="flex-item">
+            zoom_zoom_photography
+        </p>
+    </div>
+    <div class="gallery flex-container">
+    <?php
+        $galleryPost = new WP_Query( array(
+            'post_per_page' => 4,
+            'post_type' => 'zdjęcie'
+        ));
+        while($galleryPost->have_posts()) {
+            $galleryPost->the_post();
+            ?>
+            <div 
+                class="gallery-item" 
+                style="background-image: url(<?php echo get_field('image') ?>">
+            </div>
+    <?php    
+    }
+    ?>       
+    </div>
+</section>
 <?php
 get_footer();
 ?>
