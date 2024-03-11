@@ -79,6 +79,7 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
             </div>
     <?php    
     }
+    wp_reset_postdata()
     ?>       
     </div>
 </section>
@@ -97,6 +98,58 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
             }
         wp_reset_postdata();    
         ?>
+    </div>
+</section>
+<section 
+    class="section-height big_picture flex-container"
+    style="background-image: url(<?php echo get_theme_file_uri('images/calendar-background.jpg') ?>)">
+    <div class="calendar">
+        <h5>tutaj będę robić zdjęcia</h5>
+    <div class="events flex-container-column">
+        <?php
+            $today = date('Ymd');
+            $calendarPost = new WP_Query( array(
+                'posts_per_page' => 3,
+                'post_type' => 'kalendarz',
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
+                'meta_query' => array (
+                    array(
+                        'key' => 'event_date',
+                        'compare' => '>=',
+                        'value' => $today,
+                        'type' => 'numeric'
+                    )
+                )
+            ));
+
+            while($calendarPost->have_posts()) {
+                $calendarPost->the_post();
+                ?>
+                <div class="event flex-container">
+                    <p class="date"><?php
+                        $locale = 'pl_PL';
+                        $timezone = new DateTimeZone('Europe/Warsaw');
+
+                        $formatter = new IntlDateFormatter(
+                            $locale,
+                            IntlDateFormatter::LONG,
+                            IntlDateFormatter::NONE,
+                            $timezone,
+                            IntlDateFormatter::GREGORIAN,
+                            'd MMMM'
+                        );
+                        $dataObject = DateTime::createFromFormat('d/m/Y', get_field('event_date'));
+                        $formated_data = $formatter->format($dataObject);
+                        echo $formated_data;
+                        ?></p>
+                    <p class="name"><?php echo get_the_title() ?></p>
+                </div>
+                <?php
+            }
+            wp_reset_postdata()
+            ?>
+        </div>
     </div>
 </section>
 <?php

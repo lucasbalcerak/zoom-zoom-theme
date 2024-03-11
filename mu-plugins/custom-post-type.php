@@ -20,7 +20,7 @@ function custom_post_types() {
         'public' => true,
         'labels' => array(
             'name' => 'Oferta',
-            'add_new_item' => 'Oferta',
+            'add_new_item' => 'Dodaj oferte',
             'edit_item' => 'Edytuj Oferte',
             'all_items' => 'Oferty',
             'singular_name' => 'Oferta'
@@ -33,12 +33,25 @@ function custom_post_types() {
         'public' => true,
         'labels' => array(
             'name' => 'Galeria',
-            'add_new_item' => 'Zdjęcie',
+            'add_new_item' => 'Dodaj zdjęcie',
             'edit_item' => 'Edytuj Zdjęcie',
             'all_items' => 'Zdjęcia',
             'singular_name' => 'Zdjęcie'
         ),
         'menu_icon' => 'dashicons-format-gallery'
+    ));
+
+    register_post_type("Kalendarz", array(
+        'show_in_rest' => true,
+        'public' => true,
+        'labels' => array(
+            'name'=> 'Kalendarz',
+            'add_new_item' => 'Dodaj wpis',
+            'edit_item' => 'Edytuj wpis',
+            'all_items' => 'Wpisy',
+            'singular_name' => 'Wpis'
+        ),
+        'menu_icon' => 'dashicons-calendar-alt'
     ));
 }
 
