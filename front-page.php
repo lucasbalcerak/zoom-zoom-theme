@@ -103,7 +103,7 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
 <section 
     class="section-height big_picture flex-container"
     style="background-image: url(<?php echo get_theme_file_uri('images/calendar-background.jpg') ?>)">
-    <div class="calendar">
+    <div class="calendar flex-container">
         <h5>tutaj będę robić zdjęcia</h5>
     <div class="events flex-container-column">
         <?php
@@ -150,6 +150,34 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
             wp_reset_postdata()
             ?>
         </div>
+    </div>
+</section>
+<section
+    class="flex-container">
+    <div class="faq flex-container">
+        <h5>Często zadawane pytania:</h5>
+        <?php
+            $faqPost = new WP_Query( array(
+                'post_per_page' => 4,
+                'post_type' => 'pytanie'
+            ));
+            while($faqPost->have_posts()) {
+                $faqPost->the_post();
+                ?>
+            <div class="question flex-container">
+                <div class="flex-container question-title">
+                    <h6>
+                        <?php echo get_the_title() ?>
+                    </h6>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <p>
+                    <?php echo get_the_content() ?>
+                </p>
+            </div>
+        <?php 
+        }        
+        ?>
     </div>
 </section>
 <?php

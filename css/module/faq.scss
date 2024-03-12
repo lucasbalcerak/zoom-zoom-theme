@@ -1,0 +1,37 @@
+.faq {
+    margin: 100px 0px;
+    flex-direction: column;
+    h5 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    h6 {
+        margin: 0;  
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1.3em;
+        margin-top: 10px;
+    }
+
+    i {
+        margin: 0;
+        font-size: 1.3em;
+        padding: 10px;
+    }
+}
+
+.question {
+    flex-direction: column;
+    width: 40%;
+}
+
+.question-title {
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: solid 2px $darkBrown;
+    padding-bottom: 10px;
+}
+

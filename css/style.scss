@@ -9,11 +9,4 @@
 @import "module/offer.scss";
 @import "module/gallery.scss";
 @import "module/calendar.scss";
-
-
-// Tests
-
-.border {
-    color: $white;
-    border: solid 1px black;
-}
+@import "module/faq.scss"
