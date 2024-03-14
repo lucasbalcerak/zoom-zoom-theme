@@ -168,10 +168,17 @@ body {
 }
 
 .gallery {
+  position: relative;
   overflow: hidden;
+  justify-content: start;
   margin-top: 50px;
   padding-bottom: 50px;
   border-bottom: solid 2px #1C0B01;
+}
+
+.slide-track {
+  width: 6600px;
+  animation: scroll 90s linear infinite;
 }
 
 .gallery-item {
@@ -186,6 +193,14 @@ body {
   margin-right: 0;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .calendar {
   flex-direction: column;
   width: 750px;
@@ -272,6 +287,12 @@ body {
   justify-content: space-between;
   border-bottom: solid 2px #1C0B01;
   padding-bottom: 10px;
+}
+
+.faq-content {
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

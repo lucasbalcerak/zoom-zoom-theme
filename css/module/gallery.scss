@@ -14,10 +14,17 @@
 }
 
 .gallery {
+    position: relative;
     overflow: hidden;
+    justify-content: start;
     margin-top: 50px;
     padding-bottom: 50px;
     border-bottom: solid 2px $darkBrown;
+}
+
+.slide-track {
+    width: calc(330px * 20);
+    animation: scroll 90s linear infinite;
 }
 
 .gallery-item{
@@ -30,5 +37,14 @@
 
     :last-child {
         margin-right: 0;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }

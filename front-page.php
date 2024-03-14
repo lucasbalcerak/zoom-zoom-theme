@@ -65,12 +65,13 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
         </p>
     </div>
     <div class="gallery flex-container">
-    <?php
-        $galleryPost = new WP_Query( array(
-            'post_per_page' => 4,
+        <div class="slide-track flex-container">
+            <?php
+            $galleryPost = new WP_Query( array(
+            'post_per_page' => 10,
             'post_type' => 'zdjęcie'
-        ));
-        while($galleryPost->have_posts()) {
+            ));
+            while($galleryPost->have_posts()) {
             $galleryPost->the_post();
             ?>
             <div 
@@ -79,8 +80,18 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
             </div>
     <?php    
     }
+            while($galleryPost->have_posts()) {
+            $galleryPost->the_post();
+            ?>
+            <div 
+                class="gallery-item" 
+                style="background-image: url(<?php echo get_field('image') ?>">
+            </div>
+    <?php 
+    }
     wp_reset_postdata()
-    ?>       
+    ?>
+        </div>       
     </div>
 </section>
 <section class="section-height flex-container">
