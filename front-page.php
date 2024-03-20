@@ -176,15 +176,15 @@ style="background-image: url(<?php echo get_theme_file_uri('images/offer-backgro
                 $faqPost->the_post();
                 ?>
             <div class="question flex-container">
-                <div class="flex-container question-title">
+                <div class="flex-container question-title js-open-close-trigger">
                     <h6>
                         <?php echo get_the_title() ?>
                     </h6>
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
-                <p>
+                <div class="faq-content">
                     <?php echo get_the_content() ?>
-                </p>
+                </div>
             </div>
         <?php 
         }        

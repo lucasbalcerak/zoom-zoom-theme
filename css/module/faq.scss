@@ -1,6 +1,7 @@
 .faq {
-    margin: 100px 0px;
+    margin: 100px auto;
     flex-direction: column;
+    width: 40%;
     h5 {
         font-size: 2em;
         margin-bottom: 20px;
@@ -25,11 +26,12 @@
 
 .question {
     flex-direction: column;
-    width: 40%;
+    width: 100%;
 }
 
 .question-title {
     width: 100%;
+    cursor: pointer;
     justify-content: space-between;
     border-bottom: solid 2px $darkBrown;
     padding-bottom: 10px;

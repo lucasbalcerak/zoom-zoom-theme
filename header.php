@@ -14,6 +14,6 @@
         <img 
         class="logo-top"
         src="<?php echo get_theme_file_uri("images/logo.png") ?>">
-    <header>
+    </header>
 
     
